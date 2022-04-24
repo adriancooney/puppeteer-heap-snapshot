@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "declaration": true,
+    "declarationDir": "dist/types"
+  },
+  "include": ["src/**/*", "tests/**/*", "bin/**/*"],
+  "exclude": ["node_modules"]
+}

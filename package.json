@@ -1,0 +1,42 @@
+{
+  "name": "puppeteer-heap-snapshot",
+  "version": "0.1.6",
+  "description": "Capture and inspect heap snapshots from Puppeteer",
+  "main": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "author": "Adrian Cooney <cooney.adrian@gmail.com>",
+  "license": "MIT",
+  "bin": "./dist/cjs/bin/puppeteer-heap-snapshot.js",
+  "exports": {
+    "import": "./dist/esm/src/index.js",
+    "require": "./dist/cjs/src/index.js",
+    "default": "./dist/esm/src/index.js"
+  },
+  "scripts": {
+    "prepack": "npm run build",
+    "prepare": "husky install && npm run lint && npm run test",
+    "format": "prettier --write '**/*.ts' '!dist/**/*'",
+    "lint": "eslint . --ext .ts",
+    "test": "jest",
+    "build:esm": "tsc --project tsconfig.esm.json",
+    "build:cjs": "tsc --project tsconfig.cjs.json",
+    "build": "rm -r dist && npm run build:esm && npm run build:cjs"
+  },
+  "devDependencies": {
+    "@types/debug": "^4.1.7",
+    "@types/jest": "^27.4.1",
+    "husky": "^7.0.4",
+    "jest": "^27.5.1",
+    "prettier": "^2.6.2",
+    "ts-jest": "^27.1.4",
+    "typescript": "^4.6.3",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
+    "eslint": "^8.14.0"
+  },
+  "dependencies": {
+    "commander": "^9.2.0",
+    "debug": "^4.3.4",
+    "puppeteer": ">=10"
+  }
+}
