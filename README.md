@@ -1,5 +1,5 @@
 # Puppeteer Heap Snapshot
-Capture heap snapshots and query the snapshot for objects matching a set of properties.
+Capture heap snapshots and query the snapshot for objects matching a set of properties. Read more about it in [this blog post](https://www.adriancooney.ie/blog/web-scraping-via-javascript-heap-snapshots).
 
 ### Install
 Install via npm/yarn.
