@@ -3,7 +3,7 @@
   "version": "0.1.7",
   "description": "Capture and inspect heap snapshots from Puppeteer",
   "main": "./dist/esm/index.js",
-  "types": "./dist/types/index.d.ts",
+  "types": "./dist/types/src/index.d.ts",
   "author": "Adrian Cooney <cooney.adrian@gmail.com>",
   "license": "MIT",
   "bin": "./dist/cjs/bin/puppeteer-heap-snapshot.js",
