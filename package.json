@@ -1,6 +1,6 @@
 {
   "name": "puppeteer-heap-snapshot",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Capture and inspect heap snapshots from Puppeteer",
   "main": "./dist/esm/index.js",
   "types": "./dist/types/src/index.d.ts",
