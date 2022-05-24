@@ -11,6 +11,10 @@ import { enableDebugLogging } from "../src/util";
 
 if (require.main === module) {
   const castProperties = (value: string): string[] => value.split(/\s*,\s*/);
+  const toNumberOrIfinity = (value: string): number => {
+    const maybeValidNumber = Number.parseInt(value);
+    return Number.isNaN(maybeValidNumber) ? Infinity : maybeValidNumber;
+  };
 
   program
     .option("--debug", "Enable debug mode (non-headless Chrome, debug logging)")
@@ -38,6 +42,17 @@ if (require.main === module) {
       "fetch/read a heap snapshot and output the matching objects in JSON"
     )
     .option("-u, --url <url>")
+    .option(
+      "-d, --depth <value>",
+      "recursion search depth",
+      toNumberOrIfinity,
+      Infinity
+    )
+    .option(
+      "-e, --exclude <...nodeNames>",
+      "name of nodes (case-sensitive) to be excluded from building graph",
+      castProperties
+    )
     .option("-f, --filepath <filepath>", "filepath", relativeFilepath)
     .requiredOption(
       "-p, --properties <...props>",
@@ -84,11 +99,15 @@ async function querySnapshotCommand({
   filepath,
   properties,
   ignoreProperties,
+  exclude,
+  depth,
 }: {
   url?: string;
   filepath?: string;
   properties: string[];
   ignoreProperties?: string[];
+  exclude?: string[];
+  depth?: number;
 }) {
   if (!url && !filepath) {
     throw new Error(`Please specify a URL or a snapshot filepath`);
@@ -100,8 +119,10 @@ async function querySnapshotCommand({
 
   log(
     JSON.stringify(
-      await findObjectsWithProperties(heapSnapshot, properties, {
+      findObjectsWithProperties(heapSnapshot, properties, {
         ignoreProperties,
+        maxDepth: depth,
+        unwantedNodeNames: exclude,
       }),
       null,
       2

@@ -5,16 +5,36 @@ import {
   HeapSnapshotStructuredGraph,
   HeapSnapshotStructuredEdge,
 } from "./types";
-import { createStructuredGraph } from "./structured-graph";
+import {
+  createStructuredGraph,
+  createStructuredNode,
+} from "./structured-graph";
+
+type BuildObjectFromNodeIdOption = {
+  propertyFilter?: (propertyName: string) => boolean;
+  maxDepth?: number;
+  unwantedNodeNames?: readonly string[];
+};
 
 export function buildObjectFromNodeId(
   heapSnapshot: HeapSnapshot,
   nodeId: number,
-  propertyFilter: (propertyName: string) => boolean = () => true
+  options: BuildObjectFromNodeIdOption
 ): BuiltHeapValue {
   debug(`building node object for node ${nodeId}`);
 
-  const graph = createStructuredGraph(heapSnapshot, nodeId, {
+  const { propertyFilter = () => true, maxDepth, unwantedNodeNames } = options;
+
+  // Get structuredNode early to figure out if we should return quickly in case of unwanted node name
+  const structuredNode = createStructuredNode(heapSnapshot, nodeId);
+
+  if (unwantedNodeNames?.includes(structuredNode.name)) {
+    debug(`found node with unwanted name ${structuredNode.name}, skipping...`);
+    return;
+  }
+
+  const graph = createStructuredGraph(heapSnapshot, nodeId, structuredNode, {
+    maxDepth,
     edgeFilter: (edge: HeapSnapshotStructuredEdge) => {
       if (edge.type === "property") {
         return edge.name! !== "__proto__" && propertyFilter(edge.name!);
@@ -95,8 +115,8 @@ function compileGraphNodeObject(
     );
   } else if (isBoolean(graph)) {
     return (
-      graph.edges.find(({ graph }) => graph.node.type === "string").graph.node
-        .name === "true"
+      graph.edges.find(({ graph }) => graph?.node.type === "string")?.graph
+        ?.node.name === "true"
     );
   } else if (isNull(graph)) {
     return null;
@@ -110,14 +130,14 @@ function compileGraphNodeObject(
 function isBoolean(graph: HeapSnapshotStructuredGraph): boolean {
   return (
     graph.node.type === "hidden" &&
-    !!graph.edges.find(({ graph }) => graph.node.name === "boolean")
+    !!graph.edges.find(({ graph }) => graph?.node.name === "boolean")
   );
 }
 
 function isNull(graph: HeapSnapshotStructuredGraph): boolean {
   return (
     graph.node.type === "hidden" &&
-    !!graph.edges.find(({ graph }) => graph.node.name === "object") &&
-    !!graph.edges.find(({ graph }) => graph.node.name === "null")
+    !!graph.edges.find(({ graph }) => graph?.node.name === "object") &&
+    !!graph.edges.find(({ graph }) => graph?.node.name === "null")
   );
 }

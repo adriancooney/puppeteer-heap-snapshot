@@ -5,6 +5,8 @@ import { buildObjectFromNodeId } from "./build-object";
 
 type FindObjectOptions = {
   ignoreProperties?: readonly string[];
+  maxDepth?: number;
+  unwantedNodeNames?: readonly string[];
 };
 
 type FindObjectReturnValue<
@@ -34,16 +36,17 @@ export function findObjectsWithProperties<
     );
   }
 
-  return nodeIds.map((nodeId) => {
-    debug(`node ${nodeId} found`);
-    return buildObjectFromNodeId(
-      heapSnapshot,
-      nodeId,
-      options?.ignoreProperties
-        ? (prop) => !options.ignoreProperties!.includes(prop)
-        : undefined
-    );
-  }) as FindObjectReturnValue<Props, Options>[];
+  return nodeIds
+    .map((nodeId) => {
+      debug(`node ${nodeId} found`);
+      return buildObjectFromNodeId(heapSnapshot, nodeId, {
+        ...options,
+        propertyFilter: options?.ignoreProperties
+          ? (prop) => !options.ignoreProperties!.includes(prop)
+          : undefined,
+      });
+    })
+    .filter((v) => v !== undefined) as FindObjectReturnValue<Props, Options>[];
 }
 
 export function findObjectWithProperties<

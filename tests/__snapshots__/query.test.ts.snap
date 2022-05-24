@@ -1,0 +1,403 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`query findObjectsWithProperties finds some objects respecting unwantedNodeNames and maxDepth options 1`] = `
+Array [
+  Object {
+    "children": "disclaimer",
+    "href": "/disclaimer/",
+  },
+  Object {
+    "children": "privacy policy",
+    "href": "/privacy/",
+  },
+  Object {
+    "hash": "",
+    "host": "polypane.app",
+    "hostname": "polypane.app",
+    "href": "https://polypane.app/css-specificity-calculator/",
+    "key": "initial",
+    "origin": "https://polypane.app",
+    "pathname": "/css-specificity-calculator/",
+    "port": "",
+    "protocol": "https:",
+    "search": "",
+  },
+  Object {
+    "children": "disclaimer",
+    "href": "/disclaimer/",
+  },
+  Object {
+    "children": Array [],
+    "className": "Header-styles-module--logo--1JkU1",
+    "href": "/",
+  },
+  Object {
+    "children": "Skip to footer",
+    "className": "SkipLink-styles-module--skiplink--2HGNv",
+    "href": "#footer",
+  },
+  Object {
+    "children": "Skip to content",
+    "className": "SkipLink-styles-module--skiplink--2HGNv",
+    "href": "#main",
+  },
+  Object {},
+  Object {},
+  Object {},
+  Object {},
+  Object {
+    "children": "Responsive design glossary",
+    "href": "/responsive-design-glossary/",
+  },
+  Object {
+    "children": "Create Polypane workspace",
+    "href": "/create-workspace/",
+  },
+  Object {
+    "children": "Your screen size wall",
+    "href": "/responsive-website-test/",
+  },
+  Object {
+    "aria-current": "page",
+    "children": "CSS specificity calculator",
+    "className": "",
+    "href": "/css-specificity-calculator/",
+    "style": Object {},
+  },
+  Object {
+    "children": "Color contrast checker",
+    "href": "/color-contrast/",
+  },
+  Object {
+    "children": "Pricing",
+    "href": "/pricing/",
+  },
+  Object {
+    "children": "For QA",
+    "href": "/quality-assurance/",
+  },
+  Object {
+    "children": "For Agencies",
+    "href": "/agencies/",
+  },
+  Object {
+    "children": "For Marketers",
+    "href": "/marketers/",
+  },
+  Object {
+    "children": "All free tools",
+    "href": "/resources/",
+  },
+  Object {
+    "children": "Home",
+    "href": "/",
+  },
+  Object {
+    "children": "About",
+    "href": "/about/",
+  },
+  Object {
+    "children": "Blog",
+    "href": "/blog/",
+  },
+  Object {
+    "children": "Newsletter",
+    "href": "/newsletter/",
+  },
+  Object {
+    "children": "Accolades",
+    "href": "/accolades/",
+  },
+  Object {
+    "children": "Changelog",
+    "href": "/docs/changelog/",
+  },
+  Object {
+    "children": "Testimonials",
+    "href": "/testimonials/",
+  },
+  Object {
+    "children": "Download",
+    "href": "/download/",
+  },
+  Object {
+    "children": "Integrations",
+    "href": "/integrations/",
+  },
+  Object {
+    "children": "Docs",
+    "href": "/docs/",
+  },
+  Object {
+    "children": "Site Quality",
+    "href": "/site-quality/",
+  },
+  Object {
+    "children": "Accessibility",
+    "href": "/accessibility/",
+  },
+  Object {
+    "children": "Accessibility Statement",
+    "href": "/accessibility-statement/",
+  },
+  Object {
+    "children": "Disclaimer",
+    "href": "/disclaimer/",
+  },
+  Object {
+    "children": "Legal",
+    "href": "/legal/",
+  },
+  Object {
+    "children": Array [],
+    "className": "Releases-styles-module--fulllink--3XjeX",
+    "href": "/docs/changelog/",
+  },
+  Object {
+    "children": Array [],
+    "href": "/blog/polypane-8-1-resizable-element-tree-disable-js-feature-new-debug-tools-and-more/",
+  },
+  Object {
+    "children": Array [],
+    "href": "/blog/polypane-8-1-resizable-element-tree-disable-js-feature-new-debug-tools-and-more/",
+  },
+  Object {
+    "children": "Blog",
+    "href": "/blog/",
+  },
+  Object {
+    "children": "Testimonials",
+    "href": "/testimonials/",
+  },
+  Object {
+    "children": "Docs",
+    "href": "/docs/",
+  },
+  Object {
+    "children": Array [],
+    "href": "/create-workspace/",
+  },
+  Object {
+    "children": Array [],
+    "href": "/visualize-browser-sizes/",
+  },
+  Object {
+    "aria-current": "page",
+    "children": Array [],
+    "className": "",
+    "href": "/css-specificity-calculator/",
+    "style": Object {},
+  },
+  Object {
+    "children": Array [],
+    "href": "/color-contrast/",
+  },
+  Object {
+    "children": "Integrations",
+    "href": "/integrations/",
+  },
+  Object {
+    "children": Array [],
+    "href": "/agencies/",
+  },
+  Object {
+    "children": Array [],
+    "href": "/marketers/",
+  },
+  Object {
+    "children": Array [],
+    "href": "/quality-assurance/",
+  },
+  Object {
+    "children": Array [],
+    "href": "/site-quality/",
+  },
+  Object {
+    "children": Array [],
+    "href": "/accessibility/",
+  },
+  Object {
+    "children": Array [],
+    "href": "/blog/polypane-9-screenshot-editor-structured-data-support-and-new-debug-tools/",
+  },
+  Object {
+    "children": Array [],
+    "className": "CTA-styles-module--button--2bMFr",
+    "href": "https://dashboard.polypane.app/register/",
+  },
+  Object {
+    "children": Object {},
+    "className": "Header-styles-module--button--3nyub",
+    "href": "https://dashboard.polypane.app/register/",
+  },
+  Object {
+    "children": "Pricing",
+    "href": "/pricing/",
+  },
+  Object {
+    "children": Array [],
+    "href": "/product-tour/?ref=designers",
+  },
+  Object {
+    "children": Array [],
+    "href": "/product-tour/?ref=developers",
+  },
+  Object {
+    "children": Array [],
+    "href": "/product-tour/?ref=responsive-design",
+  },
+  Object {
+    "children": Array [],
+    "href": "/product-tour/",
+  },
+  Object {
+    "activeStyle": Object {},
+    "children": "For Designers",
+    "href": "/product-tour/?ref=designers",
+  },
+  Object {
+    "activeStyle": Object {},
+    "children": "For Developers",
+    "href": "/product-tour/?ref=developers",
+  },
+  Object {
+    "children": "Manage Account",
+    "href": "https://dashboard.polypane.app/",
+  },
+  Object {
+    "children": "Support",
+    "href": "/support/",
+  },
+  Object {
+    "children": "privacy policy",
+    "href": "/privacy/",
+  },
+  Object {
+    "children": Array [],
+    "href": "/product-tour/?ref=developers",
+  },
+  Object {
+    "children": Array [],
+    "href": "/product-tour/?ref=responsive-design",
+  },
+  Object {
+    "children": Array [],
+    "href": "/product-tour/?ref=designers",
+  },
+  Object {
+    "children": "Privacy",
+    "href": "/privacy/",
+  },
+  Object {
+    "children": Object {},
+    "className": "Header-styles-module--button--3nyub",
+    "href": "https://dashboard.polypane.app/register/",
+  },
+  Object {
+    "href": "https://polypane.app/rss.xml",
+    "rel": "alternate",
+    "title": "Polypane Blog",
+    "type": "application/rss+xml",
+  },
+  Object {
+    "href": "https://chrome.google.com/webstore/detail/eofbapfmbfmpeplodnehlkkgpkklmapp",
+    "rel": "chrome-webstore-item",
+  },
+  Object {
+    "as": "font",
+    "crossOrigin": "anonymous",
+    "href": "/static/Inter-roman.var-subset-4205477ad91e63d6d092b4e155e529a2.woff2",
+    "rel": "preload",
+    "type": "font/woff2",
+  },
+  Object {
+    "as": "font",
+    "crossOrigin": "anonymous",
+    "href": "/static/Inter-italic.var-subset-b850defff6a5dd08ab5b60d16fd28a87.woff2",
+    "rel": "preload",
+    "type": "font/woff2",
+  },
+  Object {
+    "children": Array [],
+    "className": "CTA-styles-module--button--2bMFr",
+    "href": "https://dashboard.polypane.app/register/",
+  },
+  Object {
+    "href": "https://polypane.app/rss.xml",
+    "rel": "alternate",
+    "title": "Polypane Blog",
+    "type": "application/rss+xml",
+  },
+  Object {
+    "href": "https://chrome.google.com/webstore/detail/eofbapfmbfmpeplodnehlkkgpkklmapp",
+    "rel": "chrome-webstore-item",
+  },
+  Object {
+    "as": "font",
+    "crossOrigin": "anonymous",
+    "href": "/static/Inter-roman.var-subset-4205477ad91e63d6d092b4e155e529a2.woff2",
+    "rel": "preload",
+    "type": "font/woff2",
+  },
+  Object {
+    "as": "font",
+    "crossOrigin": "anonymous",
+    "href": "/static/Inter-italic.var-subset-b850defff6a5dd08ab5b60d16fd28a87.woff2",
+    "rel": "preload",
+    "type": "font/woff2",
+  },
+  Object {
+    "children": Array [],
+    "href": "https://twitter.com/intent/user?screen_name=polypane",
+  },
+  Object {
+    "children": Array [],
+    "href": "https://polypane-slack-invite.herokuapp.com/",
+  },
+  Object {
+    "activeStyle": Object {},
+    "children": "Responsive design",
+    "href": "/product-tour/?ref=responsive-design",
+  },
+  Object {
+    "activeStyle": Object {},
+    "children": "For Developers",
+    "href": "/product-tour/?ref=developers",
+  },
+  Object {
+    "children": "Manage Account",
+    "href": "https://dashboard.polypane.app/",
+  },
+  Object {
+    "activeStyle": Object {},
+    "children": "For Designers",
+    "href": "/product-tour/?ref=designers",
+  },
+  Object {
+    "activeStyle": Object {},
+    "children": "Responsive design",
+    "href": "/product-tour/?ref=responsive-design",
+  },
+  Object {
+    "children": Array [],
+    "href": "https://twitter.com/intent/user?screen_name=polypane",
+  },
+  Object {
+    "children": Array [],
+    "href": "https://polypane-slack-invite.herokuapp.com/",
+  },
+  Object {
+    "hash": "",
+    "host": "polypane.app",
+    "hostname": "polypane.app",
+    "href": "https://polypane.app/css-specificity-calculator/",
+    "key": "initial",
+    "origin": "https://polypane.app",
+    "pathname": "/css-specificity-calculator/",
+    "port": "",
+    "protocol": "https:",
+    "search": "",
+  },
+  Object {},
+]
+`;

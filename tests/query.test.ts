@@ -52,6 +52,27 @@ describe("query", () => {
       `);
     });
 
+    it("finds some objects respecting unwantedNodeNames and maxDepth options", async () => {
+      const heapSnapshot = await readHeapSnapshot(
+        __dirname + "/fixtures/data/example-with-builtins.heapsnapshot"
+      );
+
+      expect(
+        findObjectsWithProperties(heapSnapshot, ["href"], {
+          unwantedNodeNames: [
+            "Location",
+            "HTMLAnchorElement",
+            "URL",
+            "HTMLLinkElement",
+            "SVGGradientElement",
+            "SVGFilterElement",
+          ],
+
+          maxDepth: 1,
+        })
+      ).toMatchSnapshot();
+    });
+
     it("finds some objects with more specific properties", async () => {
       expect(findObjectsWithProperties(heapSnapshot, ["bar", "boot"]))
         .toMatchInlineSnapshot(`
@@ -71,7 +92,7 @@ describe("query", () => {
       ).toMatchInlineSnapshot(`Array []`);
     });
 
-    it("ignores propertoes", async () => {
+    it("ignores properties", async () => {
       expect(
         findObjectsWithProperties(heapSnapshot, ["bar"], {
           ignoreProperties: ["foo"],
