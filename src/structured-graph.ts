@@ -15,6 +15,7 @@ import {
 export function createStructuredGraph(
   heapSnapshot: HeapSnapshot,
   nodeId: number,
+  structuredNode: HeapSnapshotStructuredNode,
   {
     maxDepth = Infinity,
     edgeFilter = () => true,
@@ -24,7 +25,6 @@ export function createStructuredGraph(
   } = {},
   nodeIdStack: number[] = []
 ): HeapSnapshotStructuredGraph {
-  const structuredNode = createStructuredNode(heapSnapshot, nodeId);
   const structuredEdges = structuredNode.edgeIds
     .map((edgeId) => createStructuredEdge(heapSnapshot, edgeId))
     .filter(edgeFilter);
@@ -42,6 +42,7 @@ export function createStructuredGraph(
             ? createStructuredGraph(
                 heapSnapshot,
                 structuredEdge.nodeId,
+                createStructuredNode(heapSnapshot, structuredEdge.nodeId),
                 { maxDepth, edgeFilter },
                 [...nodeIdStack, nodeId]
               )
@@ -51,7 +52,7 @@ export function createStructuredGraph(
   };
 }
 
-function createStructuredNode(
+export function createStructuredNode(
   heapSnapshot: HeapSnapshot,
   nodeId: number
 ): HeapSnapshotStructuredNode {

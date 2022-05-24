@@ -15,7 +15,7 @@
   "scripts": {
     "prepack": "npm run build",
     "prepare": "husky install && npm run lint && npm run test",
-    "format": "prettier --write '**/*.ts' '!dist/**/*'",
+    "format": "prettier --write \"**/*.ts\" \"!dist/**/*\"",
     "lint": "eslint . --ext .ts",
     "test": "jest",
     "build:esm": "tsc --project tsconfig.esm.json",

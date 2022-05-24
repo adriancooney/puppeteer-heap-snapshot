@@ -66,6 +66,7 @@ export type HeapSnapshot = Omit<SerializedHeapSnapshot, "nodes" | "edges"> & {
 
 export type BuiltHeapValue =
   | undefined
+  | null
   | string
   | number
   | RegExp

@@ -6,7 +6,8 @@
     "sourceMap": true,
     "moduleResolution": "node",
     "declaration": true,
-    "declarationDir": "dist/types"
+    "declarationDir": "dist/types",
+    "strict": true
   },
   "include": ["src/**/*", "tests/**/*", "bin/**/*"],
   "exclude": ["node_modules"]
