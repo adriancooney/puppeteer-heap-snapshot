@@ -19,7 +19,7 @@ Example:
 const browser = await Puppeteer.launch();
 const page = await browser.newPage();
 
-await page.goTo("https://google.com")
+await page.goto("https://google.com")
 
 const heapSnapshot = await captureHeapSnapshot(await page.target());
 ```
