@@ -16,10 +16,13 @@ Capture a heap snapshot from a Puppeteer page target (obtained via `await page.t
 Example:
 
 ```js
+import puppeteer from 'puppeteer'
+import {captureHeapSnapshot} from 'puppeteer-heap-snapshot'
+
 const browser = await Puppeteer.launch();
 const page = await browser.newPage();
 
-await page.goTo("https://google.com")
+await page.goto("https://google.com")
 
 const heapSnapshot = await captureHeapSnapshot(await page.target());
 ```
